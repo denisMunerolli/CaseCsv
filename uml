@@ -1,0 +1,81 @@
++--------------------------------+
+|           ChannelData          |
++--------------------------------+
+| - freeTrialCount: int          |
+| - paidTrialCount: int          |
+| - fullConversionCount: int     |
+| - currentRevenue: double       |
+| - forecastRevenue: double      |
++--------------------------------+
+| + totalConversions(): int      |
++--------------------------------+
+
+             1
+             |
+             |
+             V
+
++-------------------------------+
+|           CSVReader           |
++-------------------------------+
+| - filePath: String            |
++-------------------------------+
+| + CSVReader(filePath: String) |
+| + readCSV(): List<String[]>   |
++-------------------------------+
+
+             1
+             |
+             |
+             V
+
++---------------------------------------------+
+|               ReportGenerator               |
++---------------------------------------------+
+| + generateReport(records: List<String[]>):  |
+|   Map<String, ChannelData>                  |
+| + printReport(channelDataMap: Map<String,   |
+|   ChannelData>): void                       |
++---------------------------------------------+
+
+             1
+             |
+             |
+             V
+
++----------------------------------------------+
+|                  Program                     |
++----------------------------------------------+
+| + main(args: String[]): void                 |
++----------------------------------------------+
+
+
+
+
+Detalhes das Classes
+ChannelData
+Atributos:
+
+freeTrialCount: Contagem de eventos de Free Trial.
+paidTrialCount: Contagem de eventos de Paid Trial.
+fullConversionCount: Contagem de eventos de Full Conversion.
+currentRevenue: Receita atual.
+forecastRevenue: Receita prevista.
+Métodos:
+
+totalConversions(): Retorna a soma de todos os tipos de conversões.
+CSVReader
+Atributos:
+
+filePath: Caminho para o arquivo CSV.
+Métodos:
+
+CSVReader(filePath): Construtor que inicializa o caminho do arquivo.
+readCSV(): Lê o CSV e retorna uma lista de registros.
+ReportGenerator
+Métodos:
+generateReport(records): Gera um relatório com base nos registros do CSV.
+printReport(channelDataMap): Imprime o relatório no console.
+Program
+Métodos:
+main(args): Método principal que integra as outras classes para gerar o relatório.
